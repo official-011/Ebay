@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBay Selling & Purchasing Guide</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #e53e3e; color: white; padding: 20px; text-align: center; }
+        nav { background-color: #333; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        section { padding: 20px; max-width: 800px; margin: 20px auto; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { color: #e53e3e; }
+        form { margin-top: 20px; }
+        input, textarea, button { display: block; width: 100%; margin: 10px 0; padding: 10px; }
+        button { background-color: #e53e3e; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #c53030; }
+        footer { text-align: center; padding: 10px; background-color: #333; color: white; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to eBay Selling & Purchasing Guide</h1>
+        <p>Your go-to resource for tips on buying and selling on eBay!</p>
+    </header>
+    
+    <nav>
+        <a href="#selling">Selling Tips</a>
+        <a href="#purchasing">Purchasing Tips</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <section id="home">
+        <h2>About This Site</h2>
+        <p>eBay is a global marketplace for buying and selling goods. This site provides beginner-friendly guides, tips, and simulated tools to help you get started. Remember, always follow eBay's policies for safe transactions.</p>
+    </section>
+    
+    <section id="selling">
+        <h2>Selling on eBay</h2>
+        <p>Steps to sell: 1. Create an eBay account. 2. List your item with photos and description. 3. Set a price and shipping. 4. Monitor bids and ship promptly.</p>
+        <p>Tips: Use high-quality photos, accurate descriptions, and competitive pricing. Avoid scams by verifying buyers.</p>
+        
+        <h3>Simulate Listing an Item</h3>
+        <form id="sellForm">
+            <input type="text" id="itemName" placeholder="Item Name" required>
+            <textarea id="description" placeholder="Description" required></textarea>
+            <input type="number" id="price" placeholder="Starting Price ($)" required>
+            <button type="submit">List Item (Demo)</button>
+        </form>
+        <p id="sellFeedback"></p>
+    </section>
+    
+    <section id="purchasing">
+        <h2>Purchasing on eBay</h2>
+        <p>Steps to buy: 1. Search for items. 2. Check seller ratings and reviews. 3. Place a bid or buy it now. 4. Pay securely and wait for delivery.</p>
+        <p>Tips: Use eBay's filters for condition and location. Read return policies. Protect yourself with PayPal.</p>
+        
+        <h3>Simulate Searching for Items</h3>
+        <form id="buyForm">
+            <input type="text" id="searchQuery" placeholder="Search for items (e.g., 'laptop')" required>
+            <input type="number" id="maxPrice" placeholder="Max Price ($)">
+            <button type="submit">Search (Demo)</button>
+        </form>
+        <p id="buyFeedback"></p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>For more help, visit <a href="https://www.ebay.com" target="_blank">eBay's official site</a> or email support@ebay.com.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 eBay Guide Site. Not affiliated with eBay Inc.</p>
+    </footer>
+    
+    <script>
+        // Selling form simulation
+        document.getElementById('sellForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const itemName = document.getElementById('itemName').value;
+            const description = document.getElementById('description').value;
+            const price = document.getElementById('price').value;
+            console.log('Simulated Listing:', { itemName, description, price });
+            document.getElementById('sellFeedback').textContent = `Item "${itemName}" listed for $${price}! (Check console for details.)`;
+        });
+        
+        // Purchasing form simulation
+        document.getElementById('buyForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const searchQuery = document.getElementById('searchQuery').value;
+            const maxPrice = document.getElementById('maxPrice').value;
+            console.log('Simulated Search:', { searchQuery, maxPrice });
+            document.getElementById('buyFeedback').textContent = `Searching for "${searchQuery}" under $${maxPrice || 'no limit'}! (Check console for mock results.)`;
+        });
+    </script>
+</body>
+      </html>
